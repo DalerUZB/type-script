@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #efeeee;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  text-align: center;
+  color: #333;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative; /* Input qismi qimillamasin */
+  z-index: 1; /* Todo ro'yxatlari ustidan chiqqan holda qoladi */
+}
+
+.input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.addButton {
+  width: 15%;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Todo ro'yxatini ushlab turgan div */
+.todoList {
+  /* max-height: calc(700px - 120px); */
+  max-height: 80%;
+  overflow-y: auto; /* Skroll qo'shish */
+  padding-right: 10px;
+  margin-top: 20px; /* Input qismidan keyin joy */
+  overflow-x: hidden; /* Gorizontal skrollni yashirish */
+  position: relative;
+}
+
+/* Media query for small screens (less than 540px) */
+@media (max-width: 540px) {
+  .addButton {
+    width: 40%;
+    font-size: calc(
+      0.8rem + 1vw
+    ); /* Dynamically adjust font size based on viewport width */
+  }
+}
+
+/* Scroll bar'ni yashirish */
+.todoList::-webkit-scrollbar {
+  width: 0px; /* Skroll blokining kengligini yashirish */
+}
+
+.todoList::-webkit-scrollbar-thumb {
+  background: transparent; /* Skroll blokining o'zini yashirish */
+}
